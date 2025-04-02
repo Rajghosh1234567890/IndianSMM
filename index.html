@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India SMM Panel - Premium Social Media Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+            --success-color: #00b894;
+            --danger-color: #d63031;
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --sidebar-bg: #ffffff;
+            --navbar-bg: #ffffff;
+        }
+
+        /* Dark Mode Variables */
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f8f9fa;
+            --card-bg: #2d3436;
+            --sidebar-bg: #252a2e;
+            --navbar-bg: #252a2e;
+            --dark-color: #f5f6fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            background-color: var(--card-bg);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .pricing-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            background-color: var(--card-bg);
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1.5rem;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #5649d1;
+            border-color: #5649d1;
+        }
+        
+        .dashboard-card {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--card-bg);
+        }
+        
+        .sidebar {
+            background: var(--sidebar-bg);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            height: 100%;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .sidebar-menu i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .table-responsive {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .table {
+            margin-bottom: 0;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+        
+        .table thead th {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        
+        .table tbody tr:hover {
+            background-color: rgba(108, 92, 231, 0.1);
+        }
+        
+        .badge-success {
+            background-color: var(--success-color);
+        }
+        
+        .badge-danger {
+            background-color: var(--danger-color);
+        }
+        
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+        
+        .login-container {
+            max-width: 500px;
+            margin: 5rem auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            background: var(--card-bg);
+        }
+        
+        .admin-navbar {
+            background: linear-gradient(135deg, var(--dark-color), #434c5e);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .admin-sidebar {
+            background: var(--dark-color);
+            color: white;
+            min-height: 100vh;
+            padding: 0;
+        }
+        
+        .admin-sidebar .sidebar-menu a {
+            color: white;
+            border-left: 3px solid transparent;
+            border-radius: 0;
+        }
+        
+        .admin-sidebar .sidebar-menu a:hover, .admin-sidebar .sidebar-menu a.active {
+            background-color: rgba(255,255,255,0.1);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .stat-card {
+            border-radius: 15px;
+            padding: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card.primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .stat-card.success {
+            background: linear-gradient(135deg, var(--success-color), #55efc4);
+        }
+        
+        .stat-card.warning {
+            background: linear-gradient(135deg, #fdcb6e, #e17055);
+        }
+        
+        .stat-card.danger {
+            background: linear-gradient(135deg, var(--danger-color), #ff7675);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            opacity: 0.8;
+        }
+        
+        .stat-card .count {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .stat-card .label {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Hide dashboard sections by default */
+        .dashboard-section {
+            display: none;
+        }
+        
+        /* Show active section */
+        .dashboard-section.active {
+            display: block;
+        }
+
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border: none;
+        }
+
+        /* Snow effect */
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1001;
+            background: transparent;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--navbar-bg) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color) !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Snow Effect Container -->
+    <div class="snow" id="snow-effect"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation will be loaded dynamically -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Home/Landing Page -->
+        <div id="home-page">
+            <!-- Hero Section -->
+            <section class="hero-section text-center">
+                <div class="container">
+                    <h1 class="display-4 fw-bold mb-4">Boost Your Social Media Presence</h1>
+                    <p class="lead mb-5">High-quality social media services at the most competitive prices in India</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#services" class="btn btn-light btn-lg px-4">Explore Services</a>
+                        <a href="#" id="register-btn" class="btn btn-outline-light btn-lg px-4">Get Started</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="py-5">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Our Services</h2>
+                        <p class="text-muted">We provide a wide range of social media marketing services</p>
+                    </div>
+                    
+                    <div class="row g-4" id="services-container">
+                        <!-- Services will be loaded dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="py-5 bg-light">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Why Choose India SMM Panel?</h2>
+                        <p class="text-muted">We provide the best quality services with fast delivery</p>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="feature-icon mb-3 text-primary">
+                                        <i class="fas fa-bolt fa-3x"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Fast Delivery</h5>
+                                    <p class="text-muted">Most services start within minutes of placing your order</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="feature-icon mb-3 text-primary">
+                                        <i class="fas fa-trophy fa-3x"></i>
+                                    </div>
+                                    <h5 class="fw-bold">High Quality</h5>
+                                    <p class="text-muted">Premium services with minimal drop rates</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="feature-icon mb-3 text-primary">
+                                        <i class="fas fa-headset fa-3x"></i>
+                                    </div>
+                                    <h5 class="fw-bold">24/7 Support</h5>
+                                    <p class="text-muted">Our support team is always ready to help you</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="py-5">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Our Pricing</h2>
+                        <p class="text-muted">Simple and transparent pricing for all services</p>
+                    </div>
+                    
+                    <div class="row g-4" id="pricing-container">
+                        <!-- Pricing will be loaded dynamically -->
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a href="#" id="view-all-services" class="btn btn-primary btn-lg px-4">View All Services & Pricing</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-5 bg-primary text-white">
+                <div class="container text-center">
+                    <h2 class="fw-bold mb-4">Ready to Boost Your Social Media?</h2>
+                    <p class="lead mb-5">Join thousands of satisfied customers who trust our services</p>
+                    <a href="#" id="cta-register-btn" class="btn btn-light btn-lg px-5">Get Started Now</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login-page" class="dashboard-section">
+            <div class="container">
+                <div class="login-container">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold">Welcome to India SMM Panel</h3>
+                        <p class="text-muted">Please sign in to access your account</p>
+                    </div>
+                    
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="login-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="login-password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="remember-me">
+                            <label class="form-check-label" for="remember-me">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
+                        <div class="text-center mb-3">
+                            <a href="#" id="forgot-password" class="text-decoration-none">Forgot password?</a>
+                        </div>
+                        <div class="text-center">
+                            <p class="mb-0">Don't have an account? <a href="#" id="show-register" class="text-decoration-none">Sign up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register-page" class="dashboard-section">
+            <div class="container">
+                <div class="login-container">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold">Create Your Account</h3>
+                        <p class="text-muted">Join our platform to access premium SMM services</p>
+                    </div>
+                    
+                    <form id="register-form">
+                        <div class="mb-3">
+                            <label for="register-username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="register-username" placeholder="Choose a username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="register-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="register-password" placeholder="Create a password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-confirm-password" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="register-confirm-password" placeholder="Confirm your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Create Account</button>
+                        <div class="text-center">
+                            <p class="mb-0">Already have an account? <a href="#" id="show-login" class="text-decoration-none">Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="dashboard-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 col-md-4">
+                        <div class="sidebar">
+                            <div class="user-info text-center mb-4">
+                                <div class="avatar mb-3">
+                                    <img src="https://via.placeholder.com/100" class="rounded-circle" width="80" height="80" alt="User Avatar" id="user-avatar">
+                                </div>
+                                <h6 class="fw-bold mb-1" id="dashboard-username">Loading...</h6>
+                                <p class="text-muted small" id="user-role">Member</p>
+                                <div class="balance mb-3">
+                                    <h5 class="fw-bold text-success" id="user-balance">₹0.00</h5>
+                                    <a href="#" class="btn btn-sm btn-primary" id="add-funds-btn">Add Funds</a>
+                                </div>
+                            </div>
+                            
+                            <ul class="sidebar-menu">
+                                <li><a href="#" class="dashboard-link active" data-section="dashboard-main"><i class="fas fa-home"></i> Dashboard</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="dashboard-orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="dashboard-services"><i class="fas fa-list"></i> Services</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="dashboard-funds"><i class="fas fa-wallet"></i> Add Funds</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="dashboard-api"><i class="fas fa-code"></i> API</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="dashboard-tickets"><i class="fas fa-ticket-alt"></i> Support Tickets</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="dashboard-referrals"><i class="fas fa-users"></i> Referrals</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="dashboard-account"><i class="fas fa-user"></i> Account</a></li>
+                                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Content -->
+                    <div class="col-lg-9 col-md-8">
+                        <!-- Dashboard Main -->
+                        <div id="dashboard-main" class="dashboard-section active">
+                            <div class="dashboard-header mb-4">
+                                <h4 class="fw-bold">Dashboard</h4>
+                                <p class="text-muted">Welcome back! Here's what's happening with your account.</p>
+                            </div>
+                            
+                            <!-- Stats Cards -->
+                            <div class="row mb-4">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="dashboard-card">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-muted mb-2">Balance</h6>
+                                                <h4 class="fw-bold mb-0" id="balance-card">₹0.00</h4>
+                                            </div>
+                                            <div class="icon bg-primary-light text-primary rounded-circle p-3">
+                                                <i class="fas fa-wallet"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="dashboard-card">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-muted mb-2">Orders</h6>
+                                                <h4 class="fw-bold mb-0" id="orders-card">0</h4>
+                                            </div>
+                                            <div class="icon bg-success-light text-success rounded-circle p-3">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="dashboard-card">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-muted mb-2">Completed</h6>
+                                                <h4 class="fw-bold mb-0" id="completed-card">0</h4>
+                                            </div>
+                                            <div class="icon bg-info-light text-info rounded-circle p-3">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="dashboard-card">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-muted mb-2">Pending</h6>
+                                                <h4 class="fw-bold mb-0" id="pending-card">0</h4>
+                                            </div>
+                                            <div class="icon bg-warning-light text-warning rounded-circle p-3">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Order Form -->
+                            <div class="dashboard-card mb-4">
+                                <h5 class="fw-bold mb-4">Place New Order</h5>
+                                <form id="quick-order-form">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Service</label>
+                                            <select class="form-select" id="order-service" required>
+                                                <option value="" selected disabled>Select Service</option>
+                                                <!-- Services will be loaded here -->
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Link</label>
+                                            <input type="text" class="form-control" id="order-link" placeholder="https://" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Quantity</label>
+                                            <input type="number" class="form-control" id="order-quantity" placeholder="1000" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Price</label>
+                                            <input type="text" class="form-control" id="order-price" value="₹0.00" readonly>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Place Order</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Recent Orders -->
+                            <div class="dashboard-card">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5 class="fw-bold mb-0">Recent Orders</h5>
+                                    <a href="#" class="btn btn-sm btn-outline-primary dashboard-link" data-section="dashboard-orders">View All</a>
+                                </div>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Service</th>
+                                                <th>Link</th>
+                                                <th>Amount</th>
+                                                <th>Price</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="recent-orders">
+                                            <!-- Orders will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Orders Page -->
+                        <div id="dashboard-orders" class="dashboard-section">
+                            <div class="dashboard-header mb-4">
+                                <h4 class="fw-bold">My Orders</h4>
+                                <p class="text-muted">View and manage your orders</p>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Service</th>
+                                                <th>Link</th>
+                                                <th>Amount</th>
+                                                <th>Price</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="all-orders">
+                                            <!-- All orders will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Services Page -->
+                        <div id="dashboard-services" class="dashboard-section">
+                            <div class="dashboard-header mb-4">
+                                <h4 class="fw-bold">Services</h4>
+                                <p class="text-muted">Browse our available services</p>
+                            </div>
+                            
+                            <div class="row" id="dashboard-services-container">
+                                <!-- Services will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Add Funds Page -->
+                        <div id="dashboard-funds" class="dashboard-section">
+                            <div class="dashboard-header mb-4">
+                                <h4 class="fw-bold">Add Funds</h4>
+                                <p class="text-muted">Deposit money to your account balance</p>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <form id="add-funds-form">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Amount</label>
+                                            <input type="number" class="form-control" id="funds-amount" placeholder="100.00" min="50" step="1" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Payment Method</label>
+                                            <select class="form-select" id="payment-method" required>
+                                                <option value="" selected disabled>Select payment method</option>
+                                                <option value="paypal">PayPal</option>
+                                                <option value="upi">UPI (India)</option>
+                                                <option value="stripe">Credit/Debit Card</option>
+                                                <option value="crypto">Cryptocurrency</option>
+                                                <option value="bank">Bank Transfer</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="dashboard-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Admin Sidebar -->
+                    <div class="col-lg-2 col-md-3">
+                        <div class="admin-sidebar sidebar">
+                            <div class="user-info text-center mb-4">
+                                <div class="avatar mb-3">
+                                    <img src="https://via.placeholder.com/100" class="rounded-circle" width="80" height="80" alt="Admin Avatar">
+                                </div>
+                                <h6 class="fw-bold mb-1" id="admin-username">Admin</h6>
+                                <p class="text-muted small">Administrator</p>
+                            </div>
+                            
+                            <ul class="sidebar-menu">
+                                <li><a href="#" class="dashboard-link active" data-section="admin-dashboard-main"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="admin-services"><i class="fas fa-list"></i> Services</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="admin-orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="admin-users"><i class="fas fa-users"></i> Users</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="admin-transactions"><i class="fas fa-rupee-sign"></i> Transactions</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="admin-tickets"><i class="fas fa-ticket-alt"></i> Support Tickets</a></li>
+                                <li><a href="#" class="dashboard-link" data-section="admin-settings"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Admin Main Content -->
+                    <div class="col-lg-10 col-md-9">
+                        <!-- Admin Dashboard Main -->
+                        <div id="admin-dashboard-main" class="dashboard-section active">
+                            <div class="dashboard-header mb-4">
+                                <h4 class="fw-bold">Admin Dashboard</h4>
+                                <p class="text-muted">Welcome to India SMM Panel Admin</p>
+                            </div>
+                            
+                            <!-- Admin Stats Cards -->
+                            <div class="row mb-4">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="stat-card primary">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="label">Total Users</h6>
+                                                <h4 class="count" id="total-users">0</h4>
+                                            </div>
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="stat-card success">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="label">Total Orders</h6>
+                                                <h4 class="count" id="total-orders">0</h4>
+                                            </div>
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="stat-card warning">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="label">Today's Revenue</h6>
+                                                <h4 class="count" id="today-revenue">₹0</h4>
+                                            </div>
+                                            <i class="fas fa-rupee-sign"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="stat-card danger">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="label">Pending Tickets</h6>
+                                                <h4 class="count" id="pending-tickets">0</h4>
+                                            </div>
+                                            <i class="fas fa-ticket-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Activity -->
+                            <div class="dashboard-card mb-4">
+                                <h5 class="fw-bold mb-4">Recent Activity</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>User</th>
+                                                <th>Activity</th>
+                                                <th>Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="recent-activity">
+                                            <!-- Activity will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Actions -->
+                            <div class="dashboard-card">
+                                <h5 class="fw-bold mb-4">Quick Actions</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <a href="#" class="dashboard-link btn btn-primary w-100 py-3" data-section="admin-services">
+                                            <i class="fas fa-plus-circle me-2"></i> Add New Service
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a href="#" class="dashboard-link btn btn-success w-100 py-3" data-section="admin-users">
+                                            <i class="fas fa-user-plus me-2"></i> Add New User
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a href="#" class="dashboard-link btn btn-info w-100 py-3" data-section="admin-transactions">
+                                            <i class="fas fa-rupee-sign me-2"></i> View Transactions
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Services Page -->
+                        <div id="admin-services" class="dashboard-section">
+                            <div class="dashboard-header mb-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4 class="fw-bold">Manage Services</h4>
+                                        <p class="text-muted">Add, edit or delete services</p>
+                                    </div>
+                                    <button class="btn btn-primary" id="add-service-btn">
+                                        <i class="fas fa-plus me-2"></i> Add Service
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="table-responsive">   
+                                                                      <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Category</th>
+                                                <th>Price</th>
+                                                <th>Min Order</th>
+                                                <th>Max Order</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="admin-services-list">
+                                            <!-- Services will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Add/Edit Service Modal -->
+                        <div class="modal fade" id="serviceModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="serviceModalTitle">Add New Service</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="service-form">
+                                            <input type="hidden" id="service-id">
+                                            <div class="mb-3">
+                                                <label for="service-name" class="form-label">Service Name</label>
+                                                <input type="text" class="form-control" id="service-name" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="service-category" class="form-label">Category</label>
+                                                <select class="form-select" id="service-category" required>
+                                                    <option value="Instagram">Instagram</option>
+                                                    <option value="YouTube">YouTube</option>
+                                                    <option value="Facebook">Facebook</option>
+                                                    <option value="Twitter">Twitter</option>
+                                                    <option value="TikTok">TikTok</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="service-price" class="form-label">Price per 1000</label>
+                                                    <input type="number" step="0.01" class="form-control" id="service-price" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="service-min" class="form-label">Min Order</label>
+                                                    <input type="number" class="form-control" id="service-min" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="service-max" class="form-label">Max Order</label>
+                                                    <input type="number" class="form-control" id="service-max" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="service-status" class="form-label">Status</label>
+                                                    <select class="form-select" id="service-status" required>
+                                                        <option value="active">Active</option>
+                                                        <option value="inactive">Inactive</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="service-desc" class="form-label">Description</label>
+                                                <textarea class="form-control" id="service-desc" rows="3"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" id="save-service-btn">Save Service</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Orders Page -->
+                        <div id="admin-orders" class="dashboard-section">
+                            <div class="dashboard-header mb-4">
+                                <h4 class="fw-bold">Manage Orders</h4>
+                                <p class="text-muted">View and manage all orders</p>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>User</th>
+                                                <th>Service</th>
+                                                <th>Link</th>
+                                                <th>Amount</th>
+                                                <th>Price</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="admin-orders-list">
+                                            <!-- Orders will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Users Page -->
+                        <div id="admin-users" class="dashboard-section">
+                            <div class="dashboard-header mb-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4 class="fw-bold">Manage Users</h4>
+                                        <p class="text-muted">View and manage all users</p>
+                                    </div>
+                                    <button class="btn btn-primary" id="add-user-btn">
+                                        <i class="fas fa-plus me-2"></i> Add User
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Username</th>
+                                                <th>Email</th>
+                                                <th>Balance</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
+                                                <th>Joined</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="admin-users-list">
+                                            <!-- Users will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Add/Edit User Modal -->
+                        <div class="modal fade" id="userModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="userModalTitle">Add New User</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="user-form">
+                                            <input type="hidden" id="user-id">
+                                            <div class="mb-3">
+                                                <label for="user-username" class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="user-username" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="user-email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="user-email" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="user-password" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="user-password">
+                                                <small class="text-muted">Leave blank to keep current password</small>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="user-balance" class="form-label">Balance</label>
+                                                    <input type="number" step="0.01" class="form-control" id="user-balance" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="user-role" class="form-label">Role</label>
+                                                    <select class="form-select" id="user-role" required>
+                                                        <option value="user">User</option>
+                                                        <option value="admin">Admin</option>
+                                                        <option value="reseller">Reseller</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="user-status" class="form-label">Status</label>
+                                                <select class="form-select" id="user-status" required>
+                                                    <option value="active">Active</option>
+                                                    <option value="inactive">Inactive</option>
+                                                    <option value="banned">Banned</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" id="save-user-btn">Save User</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <h5 class="fw-bold text-white mb-4">India SMM Panel</h5>
+                    <p class="text-muted">The best SMM panel in India providing high-quality social media services at competitive prices.</p>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="fw-bold text-white mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="#services" class="text-decoration-none text-muted">Services</a></li>
+                        <li class="mb-2"><a href="#pricing" class="text-decoration-none text-muted">Pricing</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">API</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="fw-bold text-white mb-4">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Instagram Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">YouTube Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Facebook Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Twitter Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">TikTok Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="fw-bold text-white mb-4">Contact Us</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@indiasmmpanel.com</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9876543210</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Mumbai, India</li>
+                    </ul>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-decoration-none text-muted me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-decoration-none text-muted"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">&copy; 2023 India SMM Panel. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-muted mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Terms of Service</a> | 
+                        <a href="#" class="text-decoration-none text-muted">Privacy Policy</a> | 
+                        <a href="#" class="text-decoration-none text-muted">Refund Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sample data for services
+        const services = [
+            {
+                id: 1,
+                name: "Instagram Followers",
+                category: "Instagram",
+                description: "High-quality real Instagram followers with fast delivery",
+                price: 45,
+                min: 100,
+                max: 10000,
+                speed: "1000-5000/day",
+                averageTime: "5-30 minutes"
+            },
+            {
+                id: 2,
+                name: "Instagram Likes",
+                category: "Instagram",
+                description: "Premium Instagram likes from real accounts",
+                price: 30,
+                min: 100,
+                max: 5000,
+                speed: "Instant",
+                averageTime: "1-5 minutes"
+            },
+            {
+                id: 3,
+                name: "YouTube Views",
+                category: "YouTube",
+                description: "High retention YouTube views with fast delivery",
+                price: 60,
+                min: 1000,
+                max: 50000,
+                speed: "5000-10000/day",
+                averageTime: "1-3 hours"
+            },
+            {
+                id: 4,
+                name: "YouTube Subscribers",
+                category: "YouTube",
+                description: "Real YouTube subscribers with gradual delivery",
+                price: 120,
+                min: 100,
+                max: 1000,
+                speed: "50-100/day",
+                averageTime: "24-72 hours"
+            },
+            {
+                id: 5,
+                name: "Facebook Page Likes",
+                category: "Facebook",
+                description: "Real Facebook page likes from active accounts",
+                price: 55,
+                min: 100,
+                max: 10000,
+                speed: "1000-3000/day",
+                averageTime: "1-6 hours"
+            },
+            {
+                id: 6,
+                name: "Twitter Followers",
+                category: "Twitter",
+                description: "Active Twitter followers with fast delivery",
+                price: 50,
+                min: 100,
+                max: 5000,
+                speed: "500-1000/day",
+                averageTime: "1-12 hours"
+            }
+        ];
+
+        // Sample data for orders
+        const orders = [
+            {
+                id: 1001,
+                service: "Instagram Followers",
+                link: "https://instagram.com/testuser",
+                amount: 1000,
+                price: 45,
+                status: "Completed",
+                date: "2023-05-15"
+            },
+            {
+                id: 1002,
+                service: "YouTube Views",
+                link: "https://youtube.com/watch?v=test123",
+                amount: 5000,
+                price: 300,
+                status: "In Progress",
+                date: "2023-05-16"
+            },
+            {
+                id: 1003,
+                service: "Facebook Page Likes",
+                link: "https://facebook.com/testpage",
+                amount: 500,
+                price: 27.5,
+                status: "Pending",
+                date: "2023-05-17"
+            }
+        ];
+
+        // Sample user data
+        const user = {
+            username: "john_doe",
+            email: "john@example.com",
+            balance: 1250.50,
+            role: "Member",
+            orders: 15,
+            completed: 12,
+            pending: 3
+        };
+
+        // Sample admin data
+        const adminStats = {
+            totalUsers: 1254,
+            totalOrders: 5689,
+            todayRevenue: 12500,
+            pendingTickets: 8
+        };
+
+        // DOM Elements
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const snowEffect = document.getElementById('snow-effect');
+        const navbarContainer = document.getElementById('navbar-container');
+        const mainContent = document.getElementById('main-content');
+        const homePage = document.getElementById('home-page');
+        const loginPage = document.getElementById('login-page');
+        const registerPage = document.getElementById('register-page');
+        const dashboardPage = document.getElementById('dashboard-page');
+        const adminDashboard = document.getElementById('admin-dashboard');
+        const servicesContainer = document.getElementById('services-container');
+        const pricingContainer = document.getElementById('pricing-container');
+        const dashboardServicesContainer = document.getElementById('dashboard-services-container');
+        const recentOrders = document.getElementById('recent-orders');
+        const allOrders = document.getElementById('all-orders');
+        const adminServicesList = document.getElementById('admin-services-list');
+        const adminOrdersList = document.getElementById('admin-orders-list');
+        const adminUsersList = document.getElementById('admin-users-list');
+        const recentActivity = document.getElementById('recent-activity');
+
+        // Navigation buttons
+        const registerBtn = document.getElementById('register-btn');
+        const ctaRegisterBtn = document.getElementById('cta-register-btn');
+        const showRegister = document.getElementById('show-register');
+        const showLogin = document.getElementById('show-login');
+        const logoutBtn = document.getElementById('logout-btn');
+        const adminLogoutBtn = document.getElementById('admin-logout-btn');
+        const viewAllServices = document.getElementById('view-all-services');
+        const addServiceBtn = document.getElementById('add-service-btn');
+        const addUserBtn = document.getElementById('add-user-btn');
+        const saveServiceBtn = document.getElementById('save-service-btn');
+        const saveUserBtn = document.getElementById('save-user-btn');
+
+        // Forms
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const quickOrderForm = document.getElementById('quick-order-form');
+        const addFundsForm = document.getElementById('add-funds-form');
+        const serviceForm = document.getElementById('service-form');
+        const userForm = document.getElementById('user-form');
+
+        // User info elements
+        const dashboardUsername = document.getElementById('dashboard-username');
+        const userRole = document.getElementById('user-role');
+        const userBalance = document.getElementById('user-balance');
+        const balanceCard = document.getElementById('balance-card');
+        const ordersCard = document.getElementById('orders-card');
+        const completedCard = document.getElementById('completed-card');
+        const pendingCard = document.getElementById('pending-card');
+
+        // Admin stats elements
+        const totalUsers = document.getElementById('total-users');
+        const totalOrders = document.getElementById('total-orders');
+        const todayRevenue = document.getElementById('today-revenue');
+        const pendingTickets = document.getElementById('pending-tickets');
+
+        // Current page state
+        let currentPage = 'home';
+        let isAdmin = false;
+        let darkMode = false;
+
+        // Initialize the page
+        function init() {
+            loadNavbar();
+            renderServices();
+            renderPricing();
+            renderDashboardServices();
+            renderRecentOrders();
+            renderAllOrders();
+            renderAdminServices();
+            renderAdminOrders();
+            renderAdminUsers();
+            renderRecentActivity();
+            updateUserInfo();
+            updateAdminStats();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Show the current page
+            showPage(currentPage);
+        }
+
+        // Load navbar based on current page state
+        function loadNavbar() {
+            let navbarHtml = '';
+            
+            if (currentPage === 'home' || currentPage === 'login' || currentPage === 'register') {
+                navbarHtml = `
+                    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+                        <div class="container">
+                            <a class="navbar-brand" href="#">India SMM Panel</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#services">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#pricing">Pricing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">API</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact</a>
+                                    </li>
+                                </ul>
+                                <div class="d-flex">
+                                    <a href="#" class="btn btn-outline-primary me-2" id="navbar-login-btn">Login</a>
+                                    <a href="#" class="btn btn-primary" id="navbar-register-btn">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                `;
+            } else if (isAdmin) {
+                navbarHtml = `
+                    <nav class="navbar admin-navbar navbar-expand-lg navbar-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">India SMM Panel - Admin</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="adminNavbar">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><i class="fas fa-envelope"></i></a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown">
+                                            <i class="fas fa-user-circle me-1"></i> Admin
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#" id="admin-nav-logout">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                `;
+            } else {
+                navbarHtml = `
+                    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+                        <div class="container">
+                            <a class="navbar-brand" href="#">India SMM Panel</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#userNavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="userNavbar">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link dashboard-link" href="#" data-section="dashboard-main">Dashboard</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dashboard-link" href="#" data-section="dashboard-services">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dashboard-link" href="#" data-section="dashboard-orders">Orders</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dashboard-link" href="#" data-section="dashboard-funds">Add Funds</a>
+                                    </li>
+                                </ul>
+                                <div class="d-flex align-items-center">
+                                    <span class="me-3 fw-bold text-success" id="navbar-balance">₹${user.balance.toFixed(2)}</span>
+                                    <div class="dropdown">
+                                        <a href="#" class="dropdown-toggle text-decoration-none" id="userDropdown" data-bs-toggle="dropdown">
+                                            <img src="https://via.placeholder.com/30" class="rounded-circle" width="30" height="30" alt="User">
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item dashboard-link" href="#" data-section="dashboard-account"><i class="fas fa-user me-2"></i> Account</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#" id="user-nav-logout"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                `;
+            }
+            
+            navbarContainer.innerHTML = navbarHtml;
+            
+            // Add event listeners to dynamically loaded navbar elements
+            if (currentPage === 'home' || currentPage === 'login' || currentPage === 'register') {
+                document.getElementById('navbar-login-btn').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage('login');
+                });
+                
+                document.getElementById('navbar-register-btn').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage('register');
+                });
+            } else if (isAdmin) {
+                document.getElementById('admin-nav-logout').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    logout();
+                });
+            } else {
+                document.getElementById('user-nav-logout').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    logout();
+                });
+            }
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Dark mode toggle
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+            
+            // Navigation buttons
+            registerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('register');
+            });
+            
+            ctaRegisterBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('register');
+            });
+            
+            showRegister.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('register');
+            });
+            
+            showLogin.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('login');
+            });
+            
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                logout();
+            });
+            
+            adminLogoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                logout();
+            });
+            
+            viewAllServices.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('dashboard');
+                setTimeout(() => {
+                    document.querySelector('.dashboard-link[data-section="dashboard-services"]').click();
+                }, 100);
+            });
+            
+            // Dashboard navigation
+            document.querySelectorAll('.dashboard-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    showDashboardSection(section);
+                });
+            });
+            
+            // Forms
+            loginForm.addEventListener('submit', handleLogin);
+            registerForm.addEventListener('submit', handleRegister);
+            quickOrderForm.addEventListener('submit', placeOrder);
+            addFundsForm.addEventListener('submit', addFunds);
+            serviceForm.addEventListener('submit', saveService);
+            userForm.addEventListener('submit', saveUser);
+            
+            // Admin buttons
+            addServiceBtn.addEventListener('click', () => {
+                document.getElementById('serviceModalTitle').textContent = 'Add New Service';
+                document.getElementById('service-id').value = '';
+                document.getElementById('service-name').value = '';
+                document.getElementById('service-category').value = 'Instagram';
+                document.getElementById('service-price').value = '';
+                document.getElementById('service-min').value = '';
+                document.getElementById('service-max').value = '';
+                document.getElementById('service-status').value = 'active';
+                document.getElementById('service-desc').value = '';
+                
+                const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+                modal.show();
+            });
+            
+            addUserBtn.addEventListener('click', () => {
+                document.getElementById('userModalTitle').textContent = 'Add New User';
+                document.getElementById('user-id').value = '';
+                document.getElementById('user-username').value = '';
+                document.getElementById('user-email').value = '';
+                document.getElementById('user-password').value = '';
+                document.getElementById('user-balance').value = '0';
+                document.getElementById('user-role').value = 'user';
+                document.getElementById('user-status').value = 'active';
+                
+                const modal = new bootstrap.Modal(document.getElementById('userModal'));
+                modal.show();
+            });
+            
+            saveServiceBtn.addEventListener('click', () => {
+                serviceForm.dispatchEvent(new Event('submit'));
+            });
+            
+            saveUserBtn.addEventListener('click', () => {
+                userForm.dispatchEvent(new Event('submit'));
+            });
+            
+            // Order service select change
+            document.getElementById('order-service').addEventListener('change', updateOrderPrice);
+            document.getElementById('order-quantity').addEventListener('input', updateOrderPrice);
+        }
+
+        // Show the current page
+        function showPage(page) {
+            currentPage = page;
+            
+            // Hide all pages
+            homePage.style.display = 'none';
+            loginPage.style.display = 'none';
+            registerPage.style.display = 'none';
+            dashboardPage.style.display = 'none';
+            adminDashboard.style.display = 'none';
+            
+            // Show the requested page
+            if (page === 'home') {
+                homePage.style.display = 'block';
+                isAdmin = false;
+            } else if (page === 'login') {
+                loginPage.style.display = 'block';
+                isAdmin = false;
+            } else if (page === 'register') {
+                registerPage.style.display = 'block';
+                isAdmin = false;
+            } else if (page === 'dashboard') {
+                dashboardPage.style.display = 'block';
+                isAdmin = false;
+                showDashboardSection('dashboard-main');
+            } else if (page === 'admin') {
+                adminDashboard.style.display = 'block';
+                isAdmin = true;
+                showDashboardSection('admin-dashboard-main');
+            }
+            
+            // Reload navbar to reflect changes
+            loadNavbar();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Show dashboard section
+        function showDashboardSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the requested section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active link in sidebar
+            document.querySelectorAll('.dashboard-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            document.querySelector(`.dashboard-link[data-section="${sectionId}"]`).classList.add('active');
+        }
+
+        // Render services on home page
+        function renderServices() {
+            let html = '';
+            
+            services.forEach(service => {
+                html += `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">
+                                    <i class="fab fa-${service.category.toLowerCase()}"></i>
+                                </div>
+                                <h5 class="card-title fw-bold">${service.name}</h5>
+                                <p class="card-text text-muted">${service.description}</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="badge bg-primary">${service.category}</span>
+                                    <span class="fw-bold">₹${service.price}/1k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            servicesContainer.innerHTML = html;
+        }
+
+        // Render pricing on home page
+        function renderPricing() {
+            let html = '';
+            
+            // Group services by category
+            const categories = {};
+            services.forEach(service => {
+                if (!categories[service.category]) {
+                    categories[service.category] = [];
+                }
+                categories[service.category].push(service);
+            });
+            
+            // Create pricing cards for each category
+            for (const category in categories) {
+                html += `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card pricing-card h-100">
+                            <div class="card-header pricing-header">
+                                <h5 class="card-title text-center mb-0">${category} Services</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="feature-list list-unstyled">
+                    `;
+                
+                categories[category].forEach(service => {
+                    html += `
+                        <li class="d-flex justify-content-between">
+                            <span>${service.name}</span>
+                            <span class="fw-bold">₹${service.price}/1k</span>
+                        </li>
+                    `;
+                });
+                
+                html += `
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center">
+                                <a href="#" class="btn btn-primary btn-sm dashboard-link" data-section="dashboard-services">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            pricingContainer.innerHTML = html;
+        }
+
+        // Render services in dashboard
+        function renderDashboardServices() {
+            let html = '';
+            
+            services.forEach(service => {
+                html += `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title fw-bold mb-0">${service.name}</h5>
+                                    <span class="badge bg-primary">${service.category}</span>
+                                </div>
+                                <p class="card-text text-muted small mb-3">${service.description}</p>
+                                <div class="service-meta mb-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <small class="text-muted">Price</small>
+                                            <p class="mb-0 fw-bold">₹${service.price}/1k</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Speed</small>
+                                            <p class="mb-0">${service.speed}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <small class="text-muted">Min Order</small>
+                                            <p class="mb-0">${service.min}</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Max Order</small>
+                                            <p class="mb-0">${service.max}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary w-100 order-service-btn" data-id="${service.id}">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            dashboardServicesContainer.innerHTML = html;
+            
+            // Add event listeners to order buttons
+            document.querySelectorAll('.order-service-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const serviceId = button.getAttribute('data-id');
+                    const service = services.find(s => s.id == serviceId);
+                    
+                    if (service) {
+                        document.getElementById('order-service').value = serviceId;
+                        document.getElementById('order-quantity').value = service.min;
+                        document.getElementById('order-price').value = `₹${((service.price * service.min) / 1000).toFixed(2)}`;
+                        
+                        showDashboardSection('dashboard-main');
+                        document.getElementById('order-link').focus();
+                    }
+                });
+            });
+        }
+
+        // Render recent orders in dashboard
+        function renderRecentOrders() {
+            let html = '';
+            
+            orders.slice(0, 5).forEach(order => {
+                let statusClass = '';
+                if (order.status === 'Completed') statusClass = 'success';
+                else if (order.status === 'In Progress') statusClass = 'warning';
+                else statusClass = 'secondary';
+                
+                html += `
+                    <tr>
+                        <td>#${order.id}</td>
+                        <td>${order.service}</td>
+                        <td class="text-truncate" style="max-width: 150px;">${order.link}</td>
+                        <td>${order.amount}</td>
+                        <td>₹${order.price.toFixed(2)}</td>
+                        <td><span class="badge bg-${statusClass}">${order.status}</span></td>
+                    </tr>
+                `;
+            });
+            
+            recentOrders.innerHTML = html;
+        }
+
+        // Render all orders in dashboard
+        function renderAllOrders() {
+            let html = '';
+            
+            orders.forEach(order => {
+                let statusClass = '';
+                if (order.status === 'Completed') statusClass = 'success';
+                else if (order.status === 'In Progress') statusClass = 'warning';
+                else statusClass = 'secondary';
+                
+                html += `
+                    <tr>
+                        <td>#${order.id}</td>
+                        <td>${order.service}</td>
+                        <td class="text-truncate" style="max-width: 150px;">${order.link}</td>
+                        <td>${order.amount}</td>
+                        <td>₹${order.price.toFixed(2)}</td>
+                        <td><span class="badge bg-${statusClass}">${order.status}</span></td>
+                        <td>${order.date}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary">View</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            allOrders.innerHTML = html;
+        }
+
+        // Render admin services
+        function renderAdminServices() {
+            let html = '';
+            
+            services.forEach(service => {
+                let statusClass = service.status === 'active' ? 'success' : 'secondary';
+                
+                html += `
+                    <tr>
+                        <td>${service.id}</td>
+                        <td>${service.name}</td>
+                        <td>${service.category}</td>
+                        <td>₹${service.price}/1k</td>
+                        <td>${service.min}</td>
+                        <td>${service.max}</td>
+                        <td><span class="badge bg-${statusClass}">${service.status}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary edit-service-btn" data-id="${service.id}">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger delete-service-btn" data-id="${service.id}">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            adminServicesList.innerHTML = html;
+            
+            // Add event listeners to edit/delete buttons
+            document.querySelectorAll('.edit-service-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const serviceId = button.getAttribute('data-id');
+                    const service = services.find(s => s.id == serviceId);
+                    
+                    if (service) {
+                        document.getElementById('serviceModalTitle').textContent = 'Edit Service';
+                        document.getElementById('service-id').value = service.id;
+                        document.getElementById('service-name').value = service.name;
+                        document.getElementById('service-category').value = service.category;
+                        document.getElementById('service-price').value = service.price;
+                        document.getElementById('service-min').value = service.min;
+                        document.getElementById('service-max').value = service.max;
+                        document.getElementById('service-status').value = service.status;
+                        document.getElementById('service-desc').value = service.description;
+                        
+                        const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+                        modal.show();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.delete-service-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    if (confirm('Are you sure you want to delete this service?')) {
+                        // In a real app, you would make an API call here
+                        alert('Service deleted successfully!');
+                        // Reload services
+                        renderAdminServices();
+                    }
+                });
+            });
+        }
+
+        // Render admin orders
+        function renderAdminOrders() {
+            let html = '';
+            
+            orders.forEach(order => {
+                let statusClass = '';
+                if (order.status === 'Completed') statusClass = 'success';
+                else if (order.status === 'In Progress') statusClass = 'warning';
+                else statusClass = 'secondary';
+                
+                html += `
+                    <tr>
+                        <td>#${order.id}</td>
+                        <td>user_${order.id % 100}</td>
+                        <td>${order.service}</td>
+                        <td class="text-truncate" style="max-width: 150px;">${order.link}</td>
+                        <td>${order.amount}</td>
+                        <td>₹${order.price.toFixed(2)}</td>
+                        <td>
+                            <select class="form-select form-select-sm order-status" data-id="${order.id}" style="width: auto;">
+                                <option value="Pending" ${order.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                                <option value="In Progress" ${order.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
+                                <option value="Completed" ${order.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                                <option value="Cancelled" ${order.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+                            </select>
+                        </td>
+                        <td>${order.date}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary">View</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            adminOrdersList.innerHTML = html;
+            
+            // Add event listeners to status dropdowns
+            document.querySelectorAll('.order-status').forEach(select => {
+                select.addEventListener('change', function() {
+                    const orderId = this.getAttribute('data-id');
+                    const newStatus = this.value;
+                    
+                    // In a real app, you would make an API call here
+                    alert(`Order #${orderId} status updated to ${newStatus}`);
+                });
+            });
+        }
+
+        // Render admin users
+        function renderAdminUsers() {
+            // Sample users data
+            const users = [
+                { id: 1, username: 'admin', email: 'admin@example.com', balance: 0, role: 'admin', status: 'active', joined: '2023-01-01' },
+                { id: 2, username: 'reseller1', email: 'reseller1@example.com', balance: 1500, role: 'reseller', status: 'active', joined: '2023-02-15' },
+                { id: 3, username: 'user1', email: 'user1@example.com', balance: 250, role: 'user', status: 'active', joined: '2023-03-10' },
+                { id: 4, username: 'user2', email: 'user2@example.com', balance: 0, role: 'user', status: 'inactive', joined: '2023-04-05' },
+                { id: 5, username: 'user3', email: 'user3@example.com', balance: 750, role: 'user', status: 'banned', joined: '2023-05-20' }
+            ];
+            
+            let html = '';
+            
+            users.forEach(user => {
+                let statusClass = '';
+                if (user.status === 'active') statusClass = 'success';
+                else if (user.status === 'inactive') statusClass = 'secondary';
+                else statusClass = 'danger';
+                
+                let roleClass = '';
+                if (user.role === 'admin') roleClass = 'danger';
+                else if (user.role === 'reseller') roleClass = 'primary';
+                else roleClass = 'info';
+                
+                html += `
+                    <tr>
+                        <td>${user.id}</td>
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                        <td>₹${user.balance.toFixed(2)}</td>
+                        <td><span class="badge bg-${roleClass}">${user.role}</span></td>
+                        <td><span class="badge bg-${statusClass}">${user.status}</span></td>
+                        <td>${user.joined}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary edit-user-btn" data-id="${user.id}">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn" data-id="${user.id}">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            adminUsersList.innerHTML = html;
+            
+            // Add event listeners to edit/delete buttons
+            document.querySelectorAll('.edit-user-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const userId = button.getAttribute('data-id');
+                    const user = users.find(u => u.id == userId);
+                    
+                    if (user) {
+                        document.getElementById('userModalTitle').textContent = 'Edit User';
+                        document.getElementById('user-id').value = user.id;
+                        document.getElementById('user-username').value = user.username;
+                        document.getElementById('user-email').value = user.email;
+                        document.getElementById('user-password').value = '';
+                        document.getElementById('user-balance').value = user.balance;
+                        document.getElementById('user-role').value = user.role;
+                        document.getElementById('user-status').value = user.status;
+                        
+                        const modal = new bootstrap.Modal(document.getElementById('userModal'));
+                        modal.show();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.delete-user-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    if (confirm('Are you sure you want to delete this user?')) {
+                        // In a real app, you would make an API call here
+                        alert('User deleted successfully!');
+                        // Reload users
+                        renderAdminUsers();
+                    }
+                });
+            });
+        }
+
+        // Render recent activity in admin dashboard
+        function renderRecentActivity() {
+            // Sample activity data
+            const activities = [
+                { date: '2023-05-20 14:30', user: 'user1', activity: 'Order placed', details: 'Instagram Followers x1000' },
+                { date: '2023-05-20 13:45', user: 'reseller1', activity: 'Funds added', details: '₹1500 via UPI' },
+                { date: '2023-05-20 12:20', user: 'user3', activity: 'Account created', details: 'New registration' },
+                { date: '2023-05-20 11:05', user: 'user2', activity: 'Order completed', details: 'YouTube Views x5000' },
+                { date: '2023-05-20 10:30', user: 'admin', activity: 'Service added', details: 'New TikTok service' }
+            ];
+            
+            let html = '';
+            
+            activities.forEach(activity => {
+                html += `
+                    <tr>
+                        <td>${activity.date}</td>
+                        <td>${activity.user}</td>
+                        <td>${activity.activity}</td>
+                        <td>${activity.details}</td>
+                    </tr>
+                `;
+            });
+            
+            recentActivity.innerHTML = html;
+        }
+
+        // Update user info in dashboard
+        function updateUserInfo() {
+            dashboardUsername.textContent = user.username;
+            userRole.textContent = user.role;
+            userBalance.textContent = `₹${user.balance.toFixed(2)}`;
+            balanceCard.textContent = `₹${user.balance.toFixed(2)}`;
+            ordersCard.textContent = user.orders;
+            completedCard.textContent = user.completed;
+            pendingCard.textContent = user.pending;
+            
+            // Update order service dropdown
+            const orderServiceSelect = document.getElementById('order-service');
+            orderServiceSelect.innerHTML = '<option value="" selected disabled>Select Service</option>';
+            
+            services.forEach(service => {
+                const option = document.createElement('option');
+                option.value = service.id;
+                option.textContent = `${service.name} (₹${service.price}/1k)`;
+                orderServiceSelect.appendChild(option);
+            });
+        }
+
+        // Update admin stats
+        function updateAdminStats() {
+            totalUsers.textContent = adminStats.totalUsers;
+            totalOrders.textContent = adminStats.totalOrders;
+            todayRevenue.textContent = `₹${adminStats.todayRevenue.toLocaleString()}`;
+            pendingTickets.textContent = adminStats.pendingTickets;
+        }
+
+        // Update order price based on service and quantity
+        function updateOrderPrice() {
+            const serviceId = document.getElementById('order-service').value;
+            const quantity = document.getElementById('order-quantity').value;
+            
+            if (serviceId && quantity) {
+                const service = services.find(s => s.id == serviceId);
+                if (service) {
+                    const price = (service.price * quantity) / 1000;
+                    document.getElementById('order-price').value = `₹${price.toFixed(2)}`;
+                }
+            }
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            darkMode = !darkMode;
+            
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.body.classList.remove('dark-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            
+            // Save preference to localStorage
+            localStorage.setItem('darkMode', darkMode);
+        }
+
+        // Create snow effect
+        function createSnow() {
+            const snowflakes = 50;
+            
+            for (let i = 0; i < snowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.innerHTML = '❄';
+                snowflake.style.position = 'absolute';
+                snowflake.style.left = `${Math.random() * 100}%`;
+                snowflake.style.top = '-20px';
+                snowflake.style.opacity = Math.random();
+                snowflake.style.fontSize = `${Math.random() * 20 + 10}px`;
+                snowflake.style.animation = `fall ${Math.random() * 10 + 5}s linear infinite`;
+                snowflake.style.animationDelay = `${Math.random() * 5}s`;
+                snowflake.style.pointerEvents = 'none';
+                snowflake.style.userSelect = 'none';
+                
+                // Add animation keyframes
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    @keyframes fall {
+                        to {
+                            transform: translateY(100vh);
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                snowEffect.appendChild(snowflake);
+            }
+        }
+
+        // Handle login
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Simple validation
+            if (!email || !password) {
+                alert('Please enter both email and password');
+                return;
+            }
+            
+            // In a real app, you would make an API call here
+            // For demo purposes, we'll just check for admin login
+            if (email === 'admin@indiasmmpanel.com' && password === 'admin123') {
+                isAdmin = true;
+                showPage('admin');
+            } else {
+                // Regular user login
+                showPage('dashboard');
+            }
+            
+            // Reset form
+            loginForm.reset();
+        }
+
+        // Handle registration
+        function handleRegister(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            
+            // Validation
+            if (!username || !email || !password || !confirmPassword) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            
+            // In a real app, you would make an API call here
+            alert('Registration successful! Please login.');
+            
+            // Reset form and show login page
+            registerForm.reset();
+            showPage('login');
+        }
+
+        // Place order
+        function placeOrder(e) {
+            e.preventDefault();
+            
+            const serviceId = document.getElementById('order-service').value;
+            const link = document.getElementById('order-link').value;
+            const quantity = document.getElementById('order-quantity').value;
+            
+            // Validation
+            if (!serviceId || !link || !quantity) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            const service = services.find(s => s.id == serviceId);
+            if (!service) {
+                alert('Invalid service selected');
+                return;
+            }
+            
+            if (quantity < service.min || quantity > service.max) {
+                alert(`Quantity must be between ${service.min} and ${service.max}`);
+                return;
+            }
+            
+            // In a real app, you would make an API call here
+            alert(`Order placed successfully for ${quantity} ${service.name} to ${link}`);
+            
+            // Reset form
+            quickOrderForm.reset();
+            document.getElementById('order-price').value = '₹0.00';
+            
+            // Update user balance (in a real app, this would come from the server)
+            const price = (service.price * quantity) / 1000;
+            user.balance -= price;
+            updateUserInfo();
+            
+            // Add to orders list
+            const newOrder = {
+                id: Math.floor(Math.random() * 9000) + 1000,
+                service: service.name,
+                link: link,
+                amount: quantity,
+                price: price,
+                status: "Pending",
+                date: new Date().toISOString().split('T')[0]
+            };
+            
+            orders.unshift(newOrder);
+            user.orders++;
+            user.pending++;
+            
+            renderRecentOrders();
+            renderAllOrders();
+            updateUserInfo();
+        }
+
+        // Add funds
+        function addFunds(e) {
+            e.preventDefault();
+            
+            const amount = document.getElementById('funds-amount').value;
+            const method = document.getElementById('payment-method').value;
+            
+            // Validation
+            if (!amount || amount < 50 || !method) {
+                alert('Please enter a valid amount (minimum ₹50) and select a payment method');
+                return;
+            }
+            
+            // In a real app, you would redirect to payment gateway or show payment details
+            alert(`Please complete your payment of ₹${amount} via ${method}`);
+            
+            // For demo purposes, we'll just add the funds
+            user.balance += parseFloat(amount);
+            updateUserInfo();
+            
+            // Reset form
+            addFundsForm.reset();
+        }
+
+        // Save service (admin)
+        function saveService(e) {
+            e.preventDefault();
+            
+            const id = document.getElementById('service-id').value;
+            const name = document.getElementById('service-name').value;
+            const category = document.getElementById('service-category').value;
+            const price = document.getElementById('service-price').value;
+            const min = document.getElementById('service-min').value;
+            const max = document.getElementById('service-max').value;
+            const status = document.getElementById('service-status').value;
+            const desc = document.getElementById('service-desc').value;
+            
+            // Validation
+            if (!name || !category || !price || !min || !max || !status) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if (id) {
+                // Edit existing service
+                // In a real app, you would make an API call here
+                alert('Service updated successfully!');
+            } else {
+                // Add new service
+                // In a real app, you would make an API call here
+                const newService = {
+                    id: services.length + 1,
+                    name: name,
+                    category: category,
+                    description: desc,
+                    price: parseFloat(price),
+                    min: parseInt(min),
+                    max: parseInt(max),
+                    status: status,
+                    speed: "1000-5000/day",
+                    averageTime: "1-24 hours"
+                };
+                
+                services.push(newService);
+                alert('Service added successfully!');
+            }
+            
+            // Close modal and refresh services
+            bootstrap.Modal.getInstance(document.getElementById('serviceModal')).hide();
+            renderServices();
+            renderPricing();
+            renderDashboardServices();
+            renderAdminServices();
+        }
+
+        // Save user (admin)
+        function saveUser(e) {
+            e.preventDefault();
+            
+            const id = document.getElementById('user-id').value;
+            const username = document.getElementById('user-username').value;
+            const email = document.getElementById('user-email').value;
+            const password = document.getElementById('user-password').value;
+            const balance = document.getElementById('user-balance').value;
+            const role = document.getElementById('user-role').value;
+            const status = document.getElementById('user-status').value;
+            
+            // Validation
+            if (!username || !email || !balance || !role || !status) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if (id) {
+                // Edit existing user
+                // In a real app, you would make an API call here
+                alert('User updated successfully!');
+            } else {
+                // Add new user
+                // In a real app, you would make an API call here
+                alert('User added successfully!');
+            }
+            
+            // Close modal and refresh users
+            bootstrap.Modal.getInstance(document.getElementById('userModal')).hide();
+            renderAdminUsers();
+        }
+
+        // Logout
+        function logout() {
+            // In a real app, you would make an API call here
+            isAdmin = false;
+            showPage('home');
+        }
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            init();
+            
+            // Check for dark mode preference
+            if (localStorage.getItem('darkMode') === 'true') {
+                toggleDarkMode();
+            }
+            
+            // Create snow effect (for demo purposes)
+            createSnow();
+        });
+    </script>
+</body>
+</html>
